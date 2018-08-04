@@ -7,6 +7,7 @@ public class nvpDoorClosed_smb_scr : nvpDoorStateBehaviour_scr {
 	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		Debug.Log("Enter Closed");
+		nvpDoorStateBehaviour_scr.STATE = "closed";
 		doorStateIndicatorRenderer.material.SetColor("_Color", Color.red);
 	}
 

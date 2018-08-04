@@ -8,7 +8,13 @@ public class nvpDoorInTransition_smb_scr : nvpDoorStateBehaviour_scr {
 	private float threshold = 0.25f;
 	bool warn = true;
 
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+  {
+		nvpDoorStateBehaviour_scr.STATE = "transition";
+  }
+
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		//if(nvpDoorStateBehaviour_scr.STATE != "transition") return;
 		timer += Time.deltaTime;
 
 		if(timer > threshold){
