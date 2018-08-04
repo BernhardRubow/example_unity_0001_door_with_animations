@@ -13,7 +13,10 @@ public class nvpDoor_scr : MonoBehaviour {
 
 	// +++ unity callbacks ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	void Start () {
-		
+		var animationStateBehaviours = _doorAnimator.GetBehaviours<nvpDoorStateBehaviour_scr>();
+		foreach(var beh in animationStateBehaviours){
+			beh.doorStateIndicatorRenderer = doorIndicator.GetComponent<Renderer>();
+		}
 	}
 
 	void Update () {
@@ -27,9 +30,7 @@ public class nvpDoor_scr : MonoBehaviour {
 	// +++ event handler ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(other.name);
 		if(other.tag == "Player"){
-
 			_open = true;
 		}
 	}
