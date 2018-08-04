@@ -5,6 +5,5 @@ using UnityEngine;
 public class nvpDoorStateBehaviour_scr : StateMachineBehaviour {
 
 	internal Renderer doorStateIndicatorRenderer;
-	public static string STATE = "";
 	
 }
